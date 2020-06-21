@@ -1,0 +1,27 @@
+@import 'theme.less';
+
+::-webkit-scrollbar-track-piece{
+	background-color: darken(@base-color, 10%);
+	-webkit-border-radius:0;
+}
+::-webkit-scrollbar{
+	width:8px;
+	height:8px;
+}
+::-webkit-scrollbar-thumb{
+	height:50px;
+	background-color: lighten(@base-color, 10%);
+	-webkit-border-radius:4px;
+	outline:0px solid #fff;
+	outline-offset:-2px;
+	border: 0px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover{
+	height:50px;
+	background-color: lighten(@base-color, 20%);
+	-webkit-border-radius:4px;
+}
+
+.h-full {
+  height: 100%;
+}

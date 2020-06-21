@@ -12,7 +12,19 @@ const routes = [
   {
     path: '/project',
     name: 'ProjectIndex',
-    component: () => import('@/views/project/Index')
+    component: () => import('@/views/project/Index'),
+    children: [
+      {
+        path: 'home',
+        name: 'ProjectHome',
+        component: () => import('@/views/project/home/Index')
+      },
+      {
+        path: 'list',
+        name: 'ProjectList',
+        component: () => import('@/views/project/list/Index')
+      }  
+    ]
   }
 ]
 

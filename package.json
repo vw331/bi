@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.6.2",
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "echarts": "^4.8.0",
+    "moment": "^2.27.0",
+    "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4"
   },
@@ -33,6 +37,11 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
+    "globals": {
+      "BMapGL": true,
+      "define": true,
+      "arguments": true
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     },

@@ -1,7 +1,136 @@
 @import '~ant-design-vue/dist/antd.less'; // 引入官方提供的 less 样式入口文件
 @import 'theme.less'; // 用于覆盖上面定义的变量
+@import 'tools.less';
 
 body {
   color: rgb(255, 255, 255);
-  background: #020210
+  background: darken(@base-color, 10%);
+}
+
+.anchorBL {
+  display: none
+}
+
+.bd {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+  z-index: 99;
+  margin-bottom: 1rem;
+  border-top: 5px solid lighten(@base-color, 25%);
+}
+
+main {
+  flex: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
+  .navbar-brand {
+    flex: 2;
+    .brand {
+      position: relative;
+      font-size: 32px;
+      line-height: 1.8;
+      padding: 0;
+      margin: 0 2rem;
+      text-align: center;
+      background-color: lighten(@base-color, 25%);
+      background-clip: content-box;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: -1.3rem;
+        width: 2.5rem;
+        background-color: lighten(@base-color, 25%);
+        transform: skew(35deg);
+        z-index: -1 ;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; right: -1.3rem;
+        width: 2.5rem;
+        background-color: lighten(@base-color, 25%);
+        transform: skew(-35deg);
+        z-index: -1 ;
+      }
+    }
+  }
+
+  .nav-item {
+    flex: 1;
+    text-align: center;
+    a {
+      position: relative;
+      display: inline-block;
+      width: 6rem;
+      line-height: 2rem;
+      text-align: center;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; left: 0; right: 0; bottom: 0;
+        z-index: -1 ;
+        background-color: lighten(@base-color, 25%);
+      }
+      &[left]:after{
+        transform: skew(35deg);
+      }
+      &[right]:after {
+        transform: skew(-35deg);
+      }
+    }
+    &.active a{
+      &:after {
+        background-color: lighten(@base-color, 50%);
+      }
+    }
+  }
+}
+
+.ant-card {
+  display: flex;
+  flex-direction: column;
+  .ant-card-body {
+    flex: 1
+  }
+  .ant-card-head-title {
+    font-weight: bolder;
+  }
+}
+
+.drawer-wrap {
+  .ant-drawer-content-wrapper {
+    top: 10%;
+    bottom: 10%;
+    height: auto;
+  }
+}
+
+.text-success {
+  color: #28a745!important
+}
+
+.text-danger {
+  color: #f5222d!important
+}
+
+.text-warning {
+  color: #ffc107!important;
+}
+
+.text-info {
+  color: #17a2b8!important
 }
