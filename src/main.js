@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Button, Card, List, Badge, Table, Tag, Drawer, Icon, Tree, Input, Progress } from 'ant-design-vue';
+import { Button, Card, List, Badge, Form, Table, Tag, Drawer, Icon, Tree, Input, Progress, Select, Checkbox } from 'ant-design-vue';
 import asiox from 'axios';
 import router from './router.js'
 import App from './App';
@@ -34,6 +34,9 @@ Vue.use(Icon);
 Vue.use(Tree);
 Vue.use(Input);
 Vue.use(Progress);
+Vue.use(Form);
+Vue.use(Select);
+Vue.use(Checkbox);
 
 Vue.config.productionTip = false
 Vue.prototype.$echarts = echarts;

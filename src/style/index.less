@@ -16,13 +16,27 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  position: relative;
+  &:after {
+    content: url(../assets/bg.jpg);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    filter: brightness(0.2);
+    opacity: .8;
+    overflow: hidden;
+  }
 }
 
 .header {
   position: relative;
   z-index: 99;
   margin-bottom: 1rem;
-  border-top: 5px solid lighten(@base-color, 25%);
+  border-top: 5px solid @top-bg;
 }
 
 main {
@@ -46,14 +60,14 @@ main {
       padding: 0;
       margin: 0 2rem;
       text-align: center;
-      background-color: lighten(@base-color, 25%);
+      background-color: @top-bg;
       background-clip: content-box;
       &:before {
         content: '';
         position: absolute;
         top: 0; bottom: 0; left: -1.3rem;
         width: 2.5rem;
-        background-color: lighten(@base-color, 25%);
+        background-color: @top-bg;
         transform: skew(35deg);
         z-index: -1 ;
       }
@@ -62,7 +76,7 @@ main {
         position: absolute;
         top: 0; bottom: 0; right: -1.3rem;
         width: 2.5rem;
-        background-color: lighten(@base-color, 25%);
+        background-color: @top-bg;
         transform: skew(-35deg);
         z-index: -1 ;
       }
@@ -83,7 +97,7 @@ main {
         position: absolute;
         top: 0; right: 0; left: 0; right: 0; bottom: 0;
         z-index: -1 ;
-        background-color: lighten(@base-color, 25%);
+        background-color: @top-bg;
       }
       &[left]:after{
         transform: skew(35deg);
@@ -94,7 +108,7 @@ main {
     }
     &.active a{
       &:after {
-        background-color: lighten(@base-color, 50%);
+        background-color: @primary-color;
       }
     }
   }
@@ -103,12 +117,21 @@ main {
 .ant-card {
   display: flex;
   flex-direction: column;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: 3px solid lighten(@border-color-base, 20%);
+    border-width: 1px 0 0 1px;
+  }
   .ant-card-body {
     flex: 1
   }
   .ant-card-head-title {
-    font-weight: bolder;
+    font-weight: normal;
   }
+
 }
 
 .drawer-wrap {
@@ -116,6 +139,12 @@ main {
     top: 10%;
     bottom: 10%;
     height: auto;
+  }
+}
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+      background-color: rgba(0,0,0,.15);
   }
 }
 

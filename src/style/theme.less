@@ -1,5 +1,7 @@
 @base-color: rgba(16, 45, 72, 1);
 
+@top-bg: rgba(16, 45, 72, .90);
+
 @gutter: 5px; // 通用间隔
 
 @primary-color: #0a5ee6; // 全局主色
@@ -13,25 +15,24 @@
 @text-color-secondary: rgba(255, 255, 255, 0.9); // 次文本色
 @disabled-color: rgba(0, 0, 0, 0.25); // 失效色
 @border-radius-base: 4px; // 组件/浮层圆角
-@border-color-base: #0c3166; // 边框色
 @box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // 浮层阴影
 @component-background: rgba(16, 45, 72, .90);
 @white: rgba(255, 255, 255, 1);
 
 // Border color
-@border-color-base: darken(@base-color, 10%); // base border outline a component
+@border-color-base: lighten(@base-color, 10%); // base border outline a component
 @border-color-split: lighten(@base-color, 10%); // split border inside a component
 @border-color-inverse: @white;
 @border-width-base: 1px; // width of the border for a component
 @border-style-base: solid; // style of a components border
 
 @card-head-color: @text-color;
-@card-head-background: lighten(@base-color, 10%);
+// @card-head-background: lighten(@base-color, 10%);
 
 // Table
-@table-header-bg: @component-background;
+@table-header-bg: lighten(@component-background, 5%);
 @table-body-sort-bg: rgba(0, 0, 0, 0.01);
 @table-row-hover-bg: @primary-color;
-
+@table-footer-bg: lighten(@component-background, 5%);
 
 @tree-node-selected-bg: @primary-color;

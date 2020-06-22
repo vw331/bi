@@ -1,10 +1,13 @@
 <template>
   <div class="list-page">
     <div class="item-left">
-      <a-card class="h-full" size="small" title="项目累计工时排行" ref="card-lt">1</a-card>
+      <a-card class="h-full" size="small" ref="card-lt">
+        <project-tree></project-tree>
+      </a-card>
     </div>
     <div class="item-center" ref="table-wrap">
       <a-table
+        class="table-striped"
         rowKey="id"
         :columns="columns"
         :data-source="data"
@@ -30,18 +33,19 @@
       </a-table>
     </div>
     <div class="item-rt">
-      <a-card class="h-full" size="small" title="项目累计工时排行" ref="card-lt">1</a-card>
+      <a-card class="h-full" size="small" title="任务进度排行" ref="card-rt">1</a-card>
     </div>
     <div class="item-rc">
-      <a-card class="h-full" size="small" title="项目累计工时排行" ref="card-lt">1</a-card>
+      <a-card class="h-full" size="small" title="任务类型分布" ref="card-rc">1</a-card>
     </div>
     <div class="item-rb">
-      <a-card class="h-full" size="small" title="项目累计工时排行" ref="card-lt">1</a-card>
+      <a-card class="h-full" size="small" title="任务进度分析" ref="card-rb">1</a-card>
     </div>
   </div>
 </template>
 
 <script>
+  import ProjectTree from '@/components/ProjectTree'
   import moment from 'moment';
   import random  from '@/utils/random';
 
@@ -96,6 +100,7 @@
 
   export default {
     name: 'ProjectList',
+    components: { ProjectTree },
     data() {
       return {
         data,
@@ -112,6 +117,155 @@
     mounted(){
       const tableHeight = this.$refs['table-wrap'].offsetHeight - 120
       this.tableScroll = { y: tableHeight }
+
+      this.initCharts1()
+      this.initCharts2()
+      this.initCharts3()
+    },
+    methods: {
+      initCharts1() {
+        const $dom = this.$refs["card-rt"].$el.lastElementChild;
+        const charts = this.$echarts.init($dom, "mytheme");
+        charts.setOption({
+          color: ["#3398DB"],
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              // 坐标轴指示器，坐标轴触发有效
+              type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          grid: {
+            top: "3%",
+            left: "3%",
+            right: "3%",
+            bottom: "1%",
+            containLabel: true
+          },
+          xAxis: {
+            type: "value",
+            show: false
+          },
+          yAxis: {
+            type: "category",
+            data: ["TK1", "TK2", "TK3", "TK4", "TK5", "TK6", "TK7"].reverse()
+          },
+          series: [
+            {
+              name: "输送量（kg）",
+              type: "bar",
+              barWidth: "60%",
+              data: [567, 458, 325, 254, 215, 180, 87].reverse(),
+              label: {
+                normal: {
+                  position: "right",
+                  show: true
+                }
+              }
+            }
+          ]
+        });
+      },
+      initCharts2() {
+        const $dom = this.$refs["card-rc"].$el.lastElementChild;
+        const charts = this.$echarts.init($dom, "mytheme");
+        charts.setOption({
+          tooltip: {
+            trigger: "item",
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          legend: {
+            orient: "vertical",
+            left: 10,
+            data: ["直接访问", "邮件营销"]
+          },
+          series: [
+            {
+              name: "项目进度",
+              type: "pie",
+              radius: ["30%", "50%"],
+              center: ["25%", "50%"],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+                position: "center"
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: "30",
+                  fontWeight: "bold"
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [
+                { value: 21, name: "延期" },
+                { value: 335, name: "正常" }
+              ]
+            },
+            {
+              name: "项目进度",
+              type: "pie",
+              radius: ["30%", "50%"],
+              center: ["75%", "50%"],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+                position: "center"
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: "30",
+                  fontWeight: "bold"
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [
+                { value: 335, name: "未开始" },
+                { value: 310, name: "正在施工" },
+                { value: 234, name: "已暂停" },
+                { value: 135, name: "已结束" },
+                { value: 1548, name: "待验收" }
+              ]
+            }
+          ]
+        });
+      },
+      initCharts3() {
+        const $dom = this.$refs["card-rb"].$el.lastElementChild;
+        const charts = this.$echarts.init($dom, "mytheme");
+        charts.setOption({
+          grid: {
+            top: "3%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            containLabel: true
+          },
+          xAxis: {
+            type: "category",
+            data: ["3月", "4月", "5月", "6月", "7月", "8月", "7月"]
+          },
+          yAxis: {
+            type: "value"
+          },
+          series: [
+            {
+              data: [820, 932, 901, 934, 1290, 1330, 1320],
+              type: "line"
+            },
+            {
+              data: [125, 321, 158, 654, 125, 458, 345],
+              type: "line"
+            }
+          ]
+        });
+      },
     }
   }
 </script>
