@@ -1,11 +1,11 @@
 <template>
   <div class="list-page">
-    <div class="item-left">
+    <div class="animate__animated animate__fadeInLeft animate__delay-1s item-left">
       <a-card class="h-full" size="small" ref="card-lt">
         <project-tree></project-tree>
       </a-card>
     </div>
-    <div class="item-center" ref="table-wrap">
+    <div class="item-center animate__animated animate__fadeInUp animate__delay-1s" ref="table-wrap">
       <a-table
         class="table-striped"
         rowKey="id"
@@ -32,13 +32,13 @@
         </span>
       </a-table>
     </div>
-    <div class="item-rt">
+    <div class="item-rt animate__animated animate__fadeInRight animate__delay-1s">
       <a-card class="h-full" size="small" title="任务进度排行" ref="card-rt">1</a-card>
     </div>
-    <div class="item-rc">
+    <div class="item-rc animate__animated animate__fadeInRight animate__delay-1s ">
       <a-card class="h-full" size="small" title="任务类型分布" ref="card-rc">1</a-card>
     </div>
-    <div class="item-rb">
+    <div class="item-rb animate__animated animate__fadeInRight animate__delay-1s">
       <a-card class="h-full" size="small" title="任务进度分析" ref="card-rb">1</a-card>
     </div>
   </div>
@@ -275,15 +275,15 @@
 @import '@/style/theme.less';
 
 .list-page {
-  display: grid;
   height: 100%;
   display: grid;
   grid-template-columns: 240px auto 360px;;
-  grid-template-rows: repeat(3, 33.33%);
+  grid-template-rows: repeat(3, 1fr);
   grid-auto-flow: column;
+  grid-gap: @gutter;
 
   & > div {
-    margin: @gutter;
+    //margin: @gutter;
     position: relative;
   }
 

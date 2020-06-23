@@ -1,25 +1,25 @@
 <template>
   <section id="project-home-page">
     <div class="home-page">
-      <div>
+      <div class="animate__animated animate__fadeInLeft animate__delay-1s">
         <a-card class="h-full" size="small" title="项目累计工时排行" ref="card-lt">1</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInLeft animate__delay-1s">
         <a-card class="h-full" size="small" title="项目分布区域占比" ref="card-lc">2</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInLeft animate__delay-1s">
         <a-card class="h-full" size="small" title="项目预览分配分析" ref="card-lb">3</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight animate__delay-1s">
         <a-card class="h-full" size="small" title="近期进度走势" ref="card-lbc">4</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight animate__delay-1s">
         <a-card class="h-full" size="small" title="净变化曲线" ref="card-rbc">5</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight animate__delay-1s">
         <a-card class="h-full" size="small" title="项目进度总揽" ref="card-rt">6</a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight animate__delay-1s">
         <a-card class="h-full" size="small" title="设备实时工况" ref="card-rc">
           <div class="p-5 text-lg">
             <dl class="flex flex-row">
@@ -49,7 +49,7 @@
           </div>
         </a-card>
       </div>
-      <div>
+      <div class="animate__animated animate__fadeInRight animate__delay-1s">
         <a-card class="h-full" size="small" ref="card-rb">
           <a-table :columns="columns" :data-source="data" :pagination="false" size="small">
             <span slot="tags" slot-scope="status">
@@ -150,13 +150,15 @@ export default {
   },
   created() {},
   mounted() {
-    this.initCharts1();
-    this.initCharts2();
-    this.initCharts3();
-    this.initCharts4();
-    this.initCharts5();
-    this.initCharts6();
-    this.initBmap();
+    this.$nextTick(function(){
+      this.initCharts1();
+      this.initCharts2();
+      this.initCharts3();
+      this.initCharts4();
+      this.initCharts5();
+      this.initCharts6();
+      this.initBmap();
+    })
     // this.initCharts9();
   },
   methods: {
@@ -456,14 +458,16 @@ export default {
     },
     initBmap() {
       const $dom = this.$refs["map-wrap"];
-      var map = new BMapGL.Map($dom);
-      map.setMapStyleV2({
-        styleId: "e82a2f8009dc18413e400978ab06fb2c"
-      });
-      // 创建地图实例
-      var point = new BMapGL.Point(116.404, 39.915);
-      // 创建点坐标
-      map.centerAndZoom(point, 15);
+      setTimeout(function(){
+        var map = new BMapGL.Map($dom);
+        map.setMapStyleV2({
+          styleId: "e82a2f8009dc18413e400978ab06fb2c"
+        });
+        // 创建地图实例
+        var point = new BMapGL.Point(116.404, 39.915);
+        // 创建点坐标
+        map.centerAndZoom(point, 15);
+      }, 1000)
     },
     initCharts9() {
       const $dom = this.$refs["map-wrap"];
@@ -518,12 +522,12 @@ export default {
 .home-page {  
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(3, 33.33%);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-auto-flow: column;
-
+ grid-gap: @gutter;
+ 
   & > div {
-    margin: @gutter;
     position: relative;
     z-index: 5;
     //border: 1px solid #ffffff

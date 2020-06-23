@@ -7,6 +7,7 @@ import App from './App';
 //css 增强库
 import './style/index.less'
 import './assets/tailwind.css';
+import 'animate.css'
 
 // 引入 ECharts 主模块
 const echarts = require('echarts/lib/echarts');
