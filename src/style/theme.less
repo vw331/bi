@@ -4,14 +4,14 @@
 
 @gutter: 10px; // 通用间隔
 
-@primary-color: #0a5ee6; // 全局主色
+@primary-color: #0079ce; // 全局主色
 @link-color: #acd5fc; // 链接色
 @success-color: #52c41a; // 成功色
 @warning-color: #faad14; // 警告色
 @error-color: #f5222d; // 错误色
 @font-size-base: 14px; // 主字号
 @heading-color: rgba(255, 255, 255, 1); // 标题色
-@text-color: rgba(255, 255, 255, 1); // 主文本色
+@text-color: rgba(150, 196, 243, 1); // 主文本色
 @text-color-secondary: rgba(255, 255, 255, 0.9); // 次文本色
 @disabled-color: rgba(0, 0, 0, 0.25); // 失效色
 @border-radius-base: 4px; // 组件/浮层圆角
@@ -19,6 +19,7 @@
 @component-background: rgba(16, 45, 72, .90);
 @white: rgba(255, 255, 255, 1);
 
+@primary-1: fadeout(@primary-color, 70%);
 // Border color
 @border-color-base: lighten(@base-color, 10%); // base border outline a component
 @border-color-split: lighten(@base-color, 10%); // split border inside a component
@@ -36,3 +37,7 @@
 @table-footer-bg: lighten(@component-background, 5%);
 
 @tree-node-selected-bg: @primary-color;
+
+// progress
+// @progress-default-color: red;
+// @progress-remaining-color: green;

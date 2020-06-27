@@ -1,7 +1,7 @@
 <!-- 项目分析  -->
 <template>
-  <div id="project-history-page">
-    <div class="history-page">
+  <div id="project-analysis-page">
+    <div class="analysis-page">
       <div class="animate__animated animate__fadeInLeft animate__delay-1s item-left">
         <a-card class="h-full" size="small">
           <project-tree></project-tree>
@@ -29,7 +29,7 @@ import ProjectTree from '@/components/ProjectTree'
 import random  from '@/utils/random';
 
 export default {
-  name: "ProjectHistory",
+  name: "ProjectAnalysis",
   components: { ProjectTree },
   data() {
     return {
@@ -90,9 +90,9 @@ export default {
 <style lang="less">
 @import '@/style/theme.less';
 
-#project-history-page {
+#project-analysis-page {
   height: 100%;
-  .history-page {
+  .analysis-page {
     height: 100%;
     display: grid;
     grid-template-columns: 240px auto;

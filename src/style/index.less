@@ -2,8 +2,20 @@
 @import 'theme.less'; // 用于覆盖上面定义的变量
 @import 'tools.less';
 
+@font-face{
+  font-family: titleFont;
+  src: url('../font/TTMeiHeiJ.ttf');
+}
+
+@font-face{
+  font-family: numberFont;
+  scr: url('../font/DIGITAL-Dream.TTF');
+  src: url('../font/DIGITAL-Dreamfat.ttf');
+  src: url('../font/DIGITAL-Regular.ttf')
+}
+
 body {
-  color: rgb(255, 255, 255);
+  color: @link-color;
   background: darken(@base-color, 10%);
 }
 
@@ -18,7 +30,7 @@ body {
   overflow: hidden;
   flex-direction: column;
   position: relative;
-  &:after {
+  &.project-bd:after {
     content: url(../assets/bg.jpg);
     display: block;
     position: absolute;
@@ -28,6 +40,19 @@ body {
     right: 0;
     z-index: -1;
     filter: brightness(0.2);
+    opacity: .8;
+    overflow: hidden;
+  }
+  &.device-bd:after {
+    content: url(../assets/bg-2.jpg);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    filter: brightness(0.4);
     opacity: .8;
     overflow: hidden;
   }
@@ -56,33 +81,22 @@ main {
   .navbar-brand {
     flex: 2;
     .brand {
+      color: lighten(saturate(@primary-color, 50%), 20%);
       position: relative;
       height: 60px;
-      font-size: 26px;
-      line-height: 1.8;
-      padding: 0;
-      margin: 0 2rem;
+      line-height: 60px;
+      font-size: 32px;
+      padding: 0 2rem;
+      margin: 0 1.2rem;
       text-align: center;
       background-color: @top-bg;
-      clip-path: polygon(0 0, 100% 0, calc(100% - 30px) 100%, 30px 100%);
-      /*&:before {
-        content: '';
-        position: absolute;
-        top: 0; bottom: 0; left: -1.3rem;
-        width: 2.5rem;
-        background-color: @top-bg;
-        transform: skew(35deg);
-        z-index: -1 ;
+      clip-path: polygon(0 0, 100% 0, calc(100% - 35px) 100%, 35px 100%);
+      &.project {
+        font-family: titleFont;
       }
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0; bottom: 0; right: -1.3rem;
-        width: 2.5rem;
-        background-color: @top-bg;
-        transform: skew(-35deg);
-        z-index: -1 ;
-      }*/
+      &.device {
+        font-weight: bold;
+      }
     }
   }
 
@@ -108,6 +122,9 @@ main {
       &[right]:after {
         transform: skew(-35deg);
       }
+    }
+    &.active a {
+      color: white
     }
     &.active a{
       &:after {

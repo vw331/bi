@@ -40,7 +40,7 @@
 
 <script>
   export default {
-    name: 'Index',
+    name: 'Login',
     data(){
       return {
         formLayout: 'horizontal',

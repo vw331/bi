@@ -69,8 +69,8 @@
         </a-card>
       </div>
       <div class="item-center">
-        <div class="map-box">
-          <div style="width: 100%; height: 100%" ref="map-wrap"></div>
+        <div class="device-box">
+         
         </div>
       </div>
     </div>  
@@ -171,7 +171,6 @@ export default {
       this.initCharts4();
       this.initCharts5();
       this.initCharts6();
-      this.initBmap();
     })
     // this.initCharts9();
   },
@@ -469,19 +468,6 @@ export default {
           }
         ]
       });
-    },
-    initBmap() {
-      const $dom = this.$refs["map-wrap"];
-      setTimeout(function(){
-        var map = new BMapGL.Map($dom);
-        map.setMapStyleV2({
-          styleId: "e82a2f8009dc18413e400978ab06fb2c"
-        });
-        // 创建地图实例
-        var point = new BMapGL.Point(116.404, 39.915);
-        // 创建点坐标
-        map.centerAndZoom(point, 15);
-      }, 1000)
     },
     initCharts9() {
       const $dom = this.$refs["map-wrap"];
