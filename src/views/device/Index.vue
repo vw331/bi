@@ -13,13 +13,13 @@
           to="/device/1/list"
           v-slot="{ href, route, navigate, isActive }"
         >
-          <li class="nav-item" :class="{'active': isActive}"><a :href="href" left>项目列表</a></li>
+          <li class="nav-item" :class="{'active': isActive}"><a :href="href" left>设备列表</a></li>
         </router-link>
         <router-link
           to="/device/1/analysis"
           v-slot="{ href, route, navigate, isActive }"
         >
-          <li class="nav-item" :class="{'active': isActive}"><a :href="href" left>项目分析</a></li>
+          <li class="nav-item" :class="{'active': isActive}"><a :href="href" left>设备分析</a></li>
         </router-link>
         <router-link
           to="/device/1/query"
@@ -34,7 +34,7 @@
           to="/device/1/log"
           v-slot="{ href, route, navigate, isActive }"
         >
-          <li class="nav-item" :class="{'active': isActive}"><a :href="href" right>项目日志</a></li>
+          <li class="nav-item" :class="{'active': isActive}"><a :href="href" right>设备日志</a></li>
         </router-link>
         <router-link
           to="/device/1/history"
@@ -43,7 +43,7 @@
           <li class="nav-item" :class="{'active': isActive}"><a :href="href" right>历史曲线</a></li>
         </router-link>
         <router-link
-          to="/project/us"
+          to="/device/1/us"
           v-slot="{ href, route, navigate, isActive }"
         >
           <li class="nav-item" :class="{'active': isActive}"><a :href="href" right>关于我们</a></li>

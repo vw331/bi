@@ -98,6 +98,11 @@ const routes = [
         component: () => import('@/views/project/aboutUs/Index')
       }
     ]
+  }, //设备详情
+  {
+    path: '/device_info/:id',
+    name: 'DeviceInfo',
+    component: () => import('@/views/device_info/Index')
   }
 ]
 

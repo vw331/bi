@@ -4,7 +4,7 @@
     <div class="analysis-page">
       <div class="animate__animated animate__fadeInLeft animate__delay-1s item-left">
         <a-card class="h-full" size="small">
-          <project-tree></project-tree>
+          <device-tree></device-tree>
         </a-card>
       </div>
       <div class="item-center animate__animated animate__fadeInRight animate__delay-1s">
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import ProjectTree from '@/components/ProjectTree'
+import DeviceTree from '@/components/DeviceTree'
 import random  from '@/utils/random';
 
 export default {
   name: "ProjectAnalysis",
-  components: { ProjectTree },
+  components: { DeviceTree },
   data() {
     return {
     };

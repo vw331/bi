@@ -20,34 +20,6 @@
         <a-card class="h-full" size="small" title="项目进度总揽" ref="card-rt">6</a-card>
       </div>
       <div class="animate__animated animate__fadeInRight animate__delay-1s">
-       <!-- <a-card class="h-full" size="small" title="设备实时工况" ref="card-rc">
-          <div class="p-5 text-lg">
-            <dl class="flex flex-row">
-              <dt class="w-32">
-                <a-badge status="success" />当前电流
-              </dt>
-              <dd class="flex-1 text-warning">200V</dd>
-            </dl>
-            <dl class="flex flex-row">
-              <dt class="w-32">
-                <a-badge status="error" />当前功率
-              </dt>
-              <dd class="flex-1 text-danger">200KW</dd>
-            </dl>
-            <dl class="flex flex-row">
-              <dt class="w-32">
-                <a-badge status="success" />最大电流
-              </dt>
-              <dd class="flex-1 text-warning">200KW</dd>
-            </dl>
-            <dl class="flex flex-row">
-              <dt class="w-32">
-                <a-badge status="success" />最大功率
-              </dt>
-              <dd class="flex-1 text-warning">200KW</dd>
-            </dl>
-          </div>
-        </a-card>-->
        <a-card class="h-full" size="small" ref="card-rc">
           <a-list bordered :data-source="dataList">
               <a-list-item slot="renderItem" slot-scope="item">
@@ -70,7 +42,7 @@
       </div>
       <div class="item-center">
         <div class="device-box">
-         
+         <img :src="deviceImg" alt="">
         </div>
       </div>
     </div>  
@@ -81,7 +53,7 @@
       :visible="drawerVisible"
       @close="drawerVisible=false"
     >
-      <project-tree></project-tree>
+      <device-tree></device-tree>
     </a-drawer>
     <div class="toggle-drawer" @click="drawerVisible=true" :show="!drawerVisible">
       <a-icon type="double-left" />
@@ -91,7 +63,7 @@
 
 <script>
 
-import ProjectTree from '@/components/ProjectTree'
+import DeviceTree from '@/components/DeviceTree'
 
 const columns = [
   {
@@ -147,7 +119,7 @@ const data = [
 
 export default {
   name: "ProjectHome",
-  components: { ProjectTree },
+  components: { DeviceTree },
   data() {
     return {
       columns,
@@ -159,7 +131,8 @@ export default {
         { id: 3, name: '项目三'}, 
         { id: 4, name: '项目四'}, 
         { id: 5, name: '项目五'}, 
-      ]
+      ],
+      deviceImg: require('@/assets/device/2-1G101092912I0.jpg')
     };
   },
   created() {},
@@ -537,13 +510,13 @@ export default {
     grid-row: 1 / span 2;
     z-index: 0;
   }
-  .map-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
+  .device-box {
+    height: 100%;
+    &> img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
   }
 }
 
