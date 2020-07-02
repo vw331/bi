@@ -28,7 +28,7 @@
             size="small"/>
         </span>
         <span slot="action" slot-scope="id">
-          <router-link :to="id">查看</router-link>
+          <router-link :to="{ name: 'Device',  params: {id}}">查看</router-link>
         </span>
       </a-table>
     </div>
@@ -50,11 +50,6 @@
   import random  from '@/utils/random';
 
   const columns = [
-    {
-      title: 'id',
-      dataIndex: 'id',
-      width: 80,
-    },
     {
       title: '项目名称',
       dataIndex: 'name',
@@ -78,6 +73,7 @@
     },
     {
       title: '操作',
+      dataIndex: 'id',
       width: 120,
       scopedSlots: { customRender: "action" }
     }
@@ -105,7 +101,8 @@
       return {
         data,
         pagination: {
-          defaultPageSize: 30
+          defaultPageSize: 30,
+          showTotal: (total, range) => `当前${range[0]}-${range[1]}条，总计 ${total} 条`
         },
         loading: false,
         columns,

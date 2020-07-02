@@ -51,7 +51,7 @@ const routes = [
       },
       {
         path: 'us',
-        name: 'ProjectUs',
+        name: 'Us',
         component: () => import('@/views/project/aboutUs/Index')
       }
     ]
@@ -64,45 +64,65 @@ const routes = [
     children: [
       { // 主页 
         path: 'home',
-        name: 'ProjectHome',
+        name: 'DevicetHome',
         component: () => import('@/views/device/home/Index')
       },
       { // 项目列表
         path: 'list',
-        name: 'ProjectList',
-        component: () => import('@/views/device/list/Index')
+        name: 'DeviceListWrap',
+        component: () => import('@/views/device/list/Index'),
+        redirect: '/device/:id/list/all',
+        children: [
+          {  //列表页
+            path: 'all',
+            name: 'DeviceList',
+            component: () => import('@/views/device/list/List')
+          },
+          {
+            path: ':id/view',
+            name: 'DeviceDetail',
+            component: () => import('@/views/device/list/Detail')
+          }
+        ]
       },
       { // 项目分析
         path: 'analysis', 
-        name: 'ProjectAnalysis',
+        name: 'DeviceAnalysis',
         component: () => import('@/views/device/analysis/Index')
       },
       { // 数据查询
         path: 'query',
-        name: 'ProjectQuery',
+        name: 'DeviceQuery',
         component: () => import('@/views/device/query/Index')
       },
       { // 项目日志
         path: 'log',
-        name: 'ProjectLog',
+        name: 'DeviceLog',
         component: () => import('@/views/device/log/Index')
       },
       { // 历史曲线
         path: 'history',
-        name: 'ProjectHistory',
+        name: 'DeviceHistory',
         component: () => import('@/views/device/history/Index')
       },
       {
         path: 'us',
-        name: 'ProjectUs',
+        name: 'Us',
         component: () => import('@/views/project/aboutUs/Index')
       }
     ]
-  }, //设备详情
-  {
+  }, 
+  {  //设备详情
     path: '/device_info/:id',
     name: 'DeviceInfo',
-    component: () => import('@/views/device_info/Index')
+    component: () => import('@/views/device_info/Index'),
+    children: [
+      {  //设备监控
+        path: 'board',
+        name: 'DeviceInfoBoard',
+        component: () => import('@/views/device_info/board/Index')
+      }
+    ]
   }
 ]
 

@@ -1,6 +1,6 @@
 <!---设备对旬-->
 <template>
-  <div class="device-media-wrap">
+  <div class="device-media-wrap" @click="$emit('ontap', device)">
     <dl class="device-media">
       <dt>
         <h3>{{ device.title }}</h3>
@@ -42,6 +42,7 @@ export default {
     background-color: fade(@base-color, 40%);
   }
   .device-media {
+    cursor: pointer;
     height: 100%;
     display: flex;
     position: relative;

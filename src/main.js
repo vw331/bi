@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Button, Card, List, Badge, Form, Table, Tag, Drawer, Icon, Tree, Input, Progress, Select, Radio, Checkbox, DatePicker, Row, Col, ConfigProvider, Statistic, Timeline, Modal, PageHeader  } from 'ant-design-vue';
+import { Button, Card, List, Badge, Form, Table, Tag, Drawer, Icon, Tree, Input, Progress, Select, Radio, Checkbox, DatePicker, Row, Col, ConfigProvider, Statistic, Timeline, Modal, PageHeader, Descriptions  } from 'ant-design-vue';
 import asiox from 'axios';
 import router from './router.js'
 import App from './App';
@@ -47,6 +47,7 @@ Vue.use(Statistic);
 Vue.use(Timeline);
 Vue.use(Modal);
 Vue.use(PageHeader);
+Vue.use(Descriptions);
 
 Vue.config.productionTip = false
 Vue.prototype.$echarts = echarts;

@@ -14,6 +14,8 @@
   src: url('../font/DIGITAL-Regular.ttf')
 }
 
+
+
 body {
   color: @link-color;
   background: darken(@base-color, 10%);
@@ -23,9 +25,14 @@ body {
   display: none
 }
 
-.bd {
+#app {
   height: 100vh;
   width: 100vw;
+}
+
+.bd {
+  height: 100%;
+  width: 100%;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -44,7 +51,7 @@ body {
     overflow: hidden;
   }
   &.device-bd:after {
-    content: url(../assets/bg-2.jpg);
+    content: url(../assets/bg-6.jpg);
     display: block;
     position: absolute;
     top: 0;
@@ -53,16 +60,40 @@ body {
     right: 0;
     z-index: -1;
     filter: brightness(0.4);
-    opacity: .8;
+    opacity: .6;
     overflow: hidden;
   }
 }
+
+
+
+@header-light: lighten(saturate(@top-bg, 5%), 10%);
+@header-dark: darken(@top-bg, 10%);
 
 .header {
   position: relative;
   z-index: 99;
   margin-bottom: 1rem;
-  border-top: 5px solid @top-bg;
+  // border-top: 5px solid @top-bg;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 4px;
+    left: 0;
+    right: 50%;
+    background-image: linear-gradient(-90deg, @header-light, @header-dark)
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 4px;
+    left: 50%;
+    right: 0;
+    background-image: linear-gradient(90deg, @header-light, @header-dark);
+    z-index: -1;
+  }
 }
 
 main {
@@ -81,7 +112,8 @@ main {
   .navbar-brand {
     flex: 2;
     .brand {
-      color: lighten(saturate(@primary-color, 50%), 20%);
+      //color: lighten(saturate(@primary-color, 50%), 20%);
+      color: #ffffff;
       position: relative;
       height: 60px;
       line-height: 60px;
@@ -89,7 +121,8 @@ main {
       padding: 0 2rem;
       margin: 0 1.2rem;
       text-align: center;
-      background-color: @top-bg;
+      //background-color: @top-bg;
+      background-image: linear-gradient(0deg, lighten(saturate(@top-bg, 20%), 10%), #043169);
       clip-path: polygon(0 0, 100% 0, calc(100% - 35px) 100%, 35px 100%);
       &.project {
         font-family: titleFont;
@@ -122,13 +155,16 @@ main {
       &[right]:after {
         transform: skew(-35deg);
       }
+      &:hover:after {
+        background-color: lighten(saturate(@top-bg, 5%), 10%);
+      }
     }
     &.active a {
       color: white
     }
     &.active a{
       &:after {
-        background-color: @primary-color;
+        background-image: linear-gradient(45deg,lighten(saturate(@primary-color, 5%), 10%), darken(saturate(@primary-color, 5%), 10%));
       }
     }
   }
@@ -154,11 +190,32 @@ main {
 
 }
 
+.ant-table-pagination {
+  width: 100%;
+  text-align: right;
+
+  .ant-pagination-total-text {
+    float: left
+  }
+}
+
 .drawer-wrap {
   .ant-drawer-content-wrapper {
     top: 10%;
     bottom: 10%;
     height: auto;
+  }
+}
+
+.statistic_bar {
+  padding: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: @component-background;
+  
+  &:hover {
+    border: 1px solid @primary-color;
+    background-color: lighten(@component-background, 5%);
   }
 }
 

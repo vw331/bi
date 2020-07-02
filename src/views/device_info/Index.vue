@@ -10,19 +10,20 @@
       </ul>
     </header>
     <main>
-      <a-page-header
-        title="空压机项目"
-        @back="() => null">
-        <template slot="extra">
-          <a-button-group>
-            <a-button>设备监控</a-button>
-            <a-button>设备分析</a-button>
-            <a-button type="primary">报警/故障</a-button>
-            <a-button>操作日志</a-button>
-          </a-button-group>
-        </template>
-      </a-page-header>
-      <router-view/>
+      <router-view>
+        <a-page-header
+          title="空压机项目"
+          @back="() => null">
+          <template slot="extra">
+            <a-button-group>
+              <a-button>设备监控</a-button>
+              <a-button>设备分析</a-button>
+              <a-button type="primary">报警/故障</a-button>
+              <a-button>操作日志</a-button>
+            </a-button-group>
+          </template>
+        </a-page-header>
+      </router-view>
     </main>
   </div>
 </template>

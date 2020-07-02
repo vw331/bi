@@ -1,23 +1,23 @@
 
 {
     "color": [
-        "#f03f53",
+        "#038fde",
         "#0ed98c",
         "#ede619",
-        "#0ba6ff",
+        "#fa273e",
         "#fa7715",
         "#aa19f0",
         "#86e80a",
         "#76f2f2"
     ],
-    "backgroundColor": "rgba(0,0,0,0)",
+    "backgroundColor": "rgba(7,9,23,0)",
     "textStyle": {},
     "title": {
         "textStyle": {
             "color": "#ffffff"
         },
         "subtextStyle": {
-            "color": "#dddddd"
+            "color": "#a9e1fa"
         }
     },
     "line": {
@@ -54,11 +54,11 @@
         "itemStyle": {
             "normal": {
                 "barBorderWidth": 0,
-                "barBorderColor": "#ffe4e4"
+                "barBorderColor": "#ffffff"
             },
             "emphasis": {
                 "barBorderWidth": 0,
-                "barBorderColor": "#ffe4e4"
+                "barBorderColor": "#ffffff"
             }
         }
     },
@@ -66,11 +66,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -78,11 +78,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -90,11 +90,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -102,11 +102,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -114,11 +114,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -126,11 +126,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -138,11 +138,11 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             },
             "emphasis": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         }
     },
@@ -161,7 +161,7 @@
         "itemStyle": {
             "normal": {
                 "borderWidth": 0,
-                "borderColor": "#ffe4e4"
+                "borderColor": "#ffffff"
             }
         },
         "lineStyle": {
@@ -174,10 +174,10 @@
         "symbol": "circle",
         "smooth": true,
         "color": [
-            "#f03f53",
+            "#038fde",
             "#0ed98c",
             "#ede619",
-            "#0ba6ff",
+            "#fa273e",
             "#fa7715",
             "#aa19f0",
             "#86e80a",
@@ -247,7 +247,7 @@
         "axisLine": {
             "show": true,
             "lineStyle": {
-                "color": "#ffecec"
+                "color": "#96c4f3"
             }
         },
         "axisTick": {
@@ -259,7 +259,7 @@
         "axisLabel": {
             "show": true,
             "textStyle": {
-                "color": "#acd1e0"
+                "color": "#96c4f3"
             }
         },
         "splitLine": {
@@ -284,7 +284,7 @@
         "axisLine": {
             "show": true,
             "lineStyle": {
-                "color": "#ffecec"
+                "color": "#96c4f3"
             }
         },
         "axisTick": {
@@ -296,7 +296,7 @@
         "axisLabel": {
             "show": true,
             "textStyle": {
-                "color": "#acd1e0"
+                "color": "#96c4f3"
             }
         },
         "splitLine": {
@@ -321,7 +321,7 @@
         "axisLine": {
             "show": true,
             "lineStyle": {
-                "color": "#ffecec"
+                "color": "#96c4f3"
             }
         },
         "axisTick": {
@@ -333,7 +333,7 @@
         "axisLabel": {
             "show": true,
             "textStyle": {
-                "color": "#acd1e0"
+                "color": "#96c4f3"
             }
         },
         "splitLine": {
@@ -358,7 +358,7 @@
         "axisLine": {
             "show": true,
             "lineStyle": {
-                "color": "#ffecec"
+                "color": "#96c4f3"
             }
         },
         "axisTick": {
@@ -370,7 +370,7 @@
         "axisLabel": {
             "show": true,
             "textStyle": {
-                "color": "#acd1e0"
+                "color": "#96c4f3"
             }
         },
         "splitLine": {
@@ -403,17 +403,17 @@
     },
     "legend": {
         "textStyle": {
-            "color": "#999999"
+            "color": "#ffffff"
         }
     },
     "tooltip": {
         "axisPointer": {
             "lineStyle": {
-                "color": "#fac7c7",
+                "color": "#96c4f3",
                 "width": "-5"
             },
             "crossStyle": {
-                "color": "#fac7c7",
+                "color": "#96c4f3",
                 "width": "-5"
             }
         }

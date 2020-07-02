@@ -104,7 +104,8 @@ export default {
       form: this.$form.createForm(this, { name: 'coordinated' }),
       expand: true,
       pagination: {
-        defaultPageSize: 30
+        defaultPageSize: 30,
+        showTotal: (total, range) => `当前${range[0]}-${range[1]}条，总计 ${total} 条`
       },
       loading: false,
       columns,

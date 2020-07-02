@@ -152,7 +152,6 @@ export default {
       const $dom = this.$refs["card-lt"].$el.lastElementChild;
       const charts = this.$echarts.init($dom, "mytheme");
       charts.setOption({
-        color: ["#3398DB"],
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -498,7 +497,7 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-auto-flow: column;
- grid-gap: @gutter;
+  grid-gap: @gutter;
  
   & > div {
     position: relative;
@@ -506,16 +505,19 @@ export default {
     //border: 1px solid #ffffff
   }
   .item-center {
+    position: relative;
     grid-column: 2 / span 2;
     grid-row: 1 / span 2;
     z-index: 0;
   }
   .device-box {
-    height: 100%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
     &> img {
       width: 100%;
-      object-fit: cover;
       height: 100%;
+      object-fit: cover;
     }
   }
 }
