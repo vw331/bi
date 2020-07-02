@@ -24,8 +24,7 @@ export default {
       window.addEventListener('resize', _.debounce(function(){
         const docHeight = document.body.clientHeight;
         const docWidth = document.body.clientWidth;
-        
-        console.log( docWidth, docHeight )
+    
 
         if( docWidth < 1680 ){
           const scale = docWidth / 1920;

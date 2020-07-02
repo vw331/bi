@@ -5,7 +5,7 @@
         <device-tree></device-tree>
       </a-card>
     </div>
-    <div class="device-wrap nimate__animated animate__fadeInRight animate__delay-1s">
+    <div class="device-wrap animate__animated animate__fadeInRight animate__delay-1s">
       <a-row :gutter="[20, 20]">
         <a-col v-for="item in data" :key="item.id" :span="8">
           <device-media :device="item" @ontap="handleClick"></device-media>
