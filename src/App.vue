@@ -20,20 +20,30 @@ export default {
   mounted() {
     this.$nextTick(() => {
       const $app = this.$refs.app
-
+      const standardScale = 1080 / 1920;
+      
       window.addEventListener('resize', _.debounce(function(){
         const docHeight = document.body.clientHeight;
         const docWidth = document.body.clientWidth;
-    
 
         if( docWidth < 1680 ){
-          const scale = docWidth / 1920;
-          const shouleHeight = 1080* scale;
-          const offsetHeight = docHeight - shouleHeight 
-          const fixOffset = offsetHeight>0 ? `translate(0, ${offsetHeight/2}px)`: ''
-          console.log(fixOffset)
+
+          const currentScale = docHeight / docWidth;
+          let [scale, translate] = [0, 0]
+          if(currentScale < standardScale) { //以高度计算
+            scale = docHeight / 1080;
+            const shouleWidth = 1920 * scale;
+            const offsetWidth = docWidth - shouleWidth;
+            translate = offsetWidth> 0 ? `translate(${offsetWidth/2}px, 0)`: ''
+          }else { // 以宽度计算
+            scale = docWidth / 1920;
+            const shouleHeight = 1080* scale;
+            const offsetHeight = docHeight - shouleHeight 
+            translate = offsetHeight>0 ? `translate(0, ${offsetHeight/2}px)`: ''
+          }
+          console.log(translate)
           $app.style.cssText = `
-            transform: scale(${scale}) ${fixOffset };
+            transform: scale(${scale}) ${translate };
             transform-origin: top left;
             min-width: 1920px;
             min-height: 1080px;
