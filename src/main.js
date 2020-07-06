@@ -1,8 +1,32 @@
 import Vue from 'vue';
-import { Button, Card, List, Badge, Form, Table, Tag, Drawer, Icon, Tree, Input, Progress, Select, Radio, Checkbox, DatePicker, Row, Col, ConfigProvider, Statistic, Timeline, Modal, PageHeader, Descriptions  } from 'ant-design-vue';
 import asiox from 'axios';
 import router from './router.js'
 import App from './App';
+import { Button, 
+  Card, 
+  List, 
+  Badge, 
+  Form, 
+  Table, 
+  Tag, 
+  Drawer,
+  Icon,
+  Tree, 
+  Input, 
+  Progress, 
+  Select, 
+  Radio, 
+  Checkbox, 
+  DatePicker, 
+  Row,
+  Col, 
+  ConfigProvider, 
+  Statistic, 
+  Timeline,
+  Modal, 
+  PageHeader, 
+  Descriptions  
+} from 'ant-design-vue';
 
 //css 增强库
 import './style/index.less'
